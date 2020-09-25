@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    background-color: #666;
+    background-image:url('./../img/background.jpg');
+    background-size: cover;
+}
+
+#logo{
+    position: absolute;
+    top:-20%;
+    left:5%;
+}
+
+.container{
+    width: 640px;
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    padding: 10px; 
+    perspective: 1000px;  
+}
+
+.card{
+   width: calc(25% - 10px);
+   height:  calc(33.333% - 10px);
+   margin: 5px;
+   position: relative;
+   cursor: pointer;
+   transform: scale(1);
+   transform-style: preserve-3d;
+   transition: transform 0.9s;
+}
+
+.card:active{
+    transform: scale(0.97);
+    transition: transform 3s;
+}
+
+.card-front, .card-black{
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-front{
+   transform: rotateY(180deg);
+}
+
+.card.flip{
+    transform: rotateY(180deg);
+}
